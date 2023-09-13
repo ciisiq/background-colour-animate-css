@@ -6,17 +6,12 @@
 
 .container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
   width: 100%;
-  background: linear-gradient(
-    45deg,
-    rgb(255, 95, 95),
-    rgb(148, 148, 244),
-    rgb(205, 79, 233),
-    rgb(32, 27, 31)
-  );
+  background: linear-gradient(45deg, #f43f70, #f47e9d, #f5b5c6, #8f1637);
   background-size: 300% 300%;
   animation: color 12s ease-in-out infinite;
 }
@@ -35,18 +30,87 @@
 
 .white-box {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-size: 30px;
+  font-size: 25px;
   font-family: fantasy, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   color: rgb(73, 73, 73);
   background-color: rgb(255, 255, 255);
   width: 40%;
-  height: 500px;
+  height: 300px;
   border-radius: 15px;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  gap: 20px;
 }
 
-.white-box:hover {
-  transform: scale(1.1);
+.btn {
+  font-size: 2rem;
+  font-weight: 700;
+  padding: 0.5em 1em;
+  color: #f43f70;
+  background-color: #fec3d3;
+  border: 7px solid #f43f70;
+  border-radius: 5px;
+  cursor: pointer;
+
+  /* Make smooth transition */
+  /* transition-property: transform;
+  transition-duration: 0.3s;
+  transition-timing-function: ease;
+  transition-delay: 0s; */
+
+  /* Short code for above*/
+
+  /* Only for transform */
+  /* transition: transform 0.3s ease 0s; */
+  /* transition: transform 0.3s ease 0s, background-color 3s, color 0.3s; */
+
+  /* For evertyhing */
+  transition: all 0.3s;
+}
+
+.btn:hover {
+  transform: translateY(-10px);
+  background-color: #f43f70;
+  color: white;
+}
+
+/* Like a function to say what the animation should do */
+@keyframes slideInLeft {
+  /* start of the animation 0% */
+  from {
+    transform: translateX(-300px);
+  }
+
+  /* end of the animation 100% */
+  to {
+    transform: translateX(0);
+  }
+}
+
+.slideInLeft {
+  animation: slideInLeft 1s ease-in;
+}
+
+.heading {
+  /* call your animation */
+  /* animation-name: slideInLeft; */
+  /* set the time for it finish one lap 0 to 100% */
+  /* animation-duration: 1s;
+  animation-timing-function: ease-in;
+  animation-delay: 1s; */
+  /* how many times you want the animation run */
+  /* animation-iteration-count: 1; */
+  /* if animation will run normally or reverse */
+  /* animation-direction: normal; */
+  /* apply the styles before to start */
+  /* animation-fill-mode: both; */
+
+  /* Push the animation to push in certain place in the page */
+  /* transform: translateX(150px); */
+
+  /* All above in sort code */
+  /* animation: slideInLeft 1s ease-in 1s 1 normal both; */
+  animation: slideInLeft 1s ease-in;
 }
